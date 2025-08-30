@@ -109,6 +109,8 @@ async function displayAlbums() {
     //         <p>${response.description}</p>
     //     </div>`
 
+
+    
     // CHATGPT CODE
     for (let index = 0; index < array.length; index++) {
     const e = array[index];
