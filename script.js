@@ -17,6 +17,7 @@ function secondsToMinutesSeconds(seconds) {
     return `${formattedMinutes}:${formattedSeconds}`;
 }
 
+
 async function getSongs(folder) {
     currFolder = folder;
     let a = await fetch(`/songs/${folder}/`)
@@ -117,7 +118,7 @@ async function displayAlbums() {
     const urlPath = new URL(e.href).pathname;
 
     // Skip if this is the base /songs folder (not an album)
-    if (urlPath === "/songs/" || e.href.includes(".htaccess")) {
+    if (urlPath === "./songs/" || e.href.includes(".htaccess")) {
         continue;
     }
 
@@ -132,7 +133,7 @@ async function displayAlbums() {
     console.log("Full href:", e.href);
     console.log("Extracted folder:", folder);
 
-    let a = await fetch(`/songs/${folder}/info.json`);
+    let a = await fetch(`./songs/${folder}/info.json`);
     if (!a.ok) {
         console.error(`❌ Failed to load /songs/${folder}/info.json: ${a.status}`);
         continue;
