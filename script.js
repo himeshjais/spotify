@@ -135,7 +135,7 @@ async function displayAlbums() {
 
     let a = await fetch(`./songs/${folder}/info.json`);
     if (!a.ok) {
-        console.error(`❌ Failed to load /songs/${folder}/info.json: ${a.status}`);
+        console.error(`❌ Failed to load ./songs/${folder}/info.json: ${a.status}`);
         continue;
     }
 
